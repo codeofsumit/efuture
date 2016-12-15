@@ -19,8 +19,32 @@ $link-visited: $primary;
 }
 
 .flag {
-  width: 20px;
+
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .placeholder-image {
+    width: 25px;
+    visibility: hidden;
+  }
+
+  .de_de & {
+    background-image: url('../assets/images/flags/de_de.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .us_us & {
+    background-image: url('../assets/images/flags/us_us.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
+
+
 
 .announced {
 

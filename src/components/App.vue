@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-
+  <div id="app" v-bind:class="market">
     <section class="hero">
       <div class="hero-body">
         <div class="container">
@@ -8,11 +7,13 @@
             <div class="level-left">
               <div>
                 <h1 class="title">The <span class="isGreen">E</span>lectric Future, is it here yet?</h1>
-                <h2 class="subtitle">Eine Liste von Elektrofahrzeugen die bereits <u>heute</u> zu kaufen sind!</h2>
+                <h2 class="subtitle">Eine Liste von Elektrofahrzeugen die <u>heute</u> zu kaufen sind!</h2>
               </div>
             </div>
             <div class="level-right">
-              <img title="Market: Germany - (others soon)" class="flag" src="http://icons.iconarchive.com/icons/custom-icon-design/round-world-flags/128/Germany-icon.png" />
+              <div class="flag" v-on:click="changeMarket()">
+                <img class="placeholder-image" src="../assets/images/flags/de_de.png" />
+              </div>
             </div>
           </div>
         </div>
@@ -87,13 +88,13 @@
                   </div>
                   <ul>
                     <li>
-                      <span>Preis ab {{car.baseSpecs.price}} €</span>
+                      <span>Preis ab {{car.baseSpecs.price}} {{translations.currency}}</span>
                     </li>
                     <li>
-                      <span>Reichweite: {{car.baseSpecs.range}} km</span>
+                      <span>Reichweite: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
                     </li>
                     <li>
-                      <span>Kapazität: {{car.baseSpecs.battery}} kWh</span>
+                      <span>Kapazität: {{car.baseSpecs.battery}} {{translations.batteryUnit}}</span>
                     </li>
                   </ul>
                 </div>
@@ -119,27 +120,34 @@
 
   export default {
     store,
+    methods: {
+      changeMarket() {
+        const newLang = this.market === 'us_us' ? 'de_de' : 'us_us';
+        store.commit('setMarket', newLang);
+      }
+    },
     data() {
       return {
       }
     },
     computed: {
+      market() {
+        return store.state.market;
+      },
+      translations() {
+        return store.state.translations;
+      },
       cars() {
         return store.state.cars;
       },
       availableCars() {
-        return this.cars.filter((car) => {
-          return car.available;
-       });
+        return this.cars.filter((car) => car.available);
       },
       modelCount() {
         return this.availableCars.length;
       },
       brandCount() {
-        const brands = _.map(this.availableCars, (car) => {
-          return car.brand
-        });
-
+        const brands = _.map(this.availableCars, (car) => car.brand);
         const uniqueBrands = _.uniq(brands);
 
         return uniqueBrands.length;

@@ -1,184 +1,192 @@
 {
-  "cars": [
-    {
-      "name": "Tesla Model S",
-      "brand": "Tesla",
-      "img": "http://blog.caranddriver.com/wp-content/uploads/2016/04/2017-Tesla-Model-S-P90D-PLACEMENT.jpg",
-      "url": "https://www.tesla.com/de_DE/models/design",
-      "available": true,
-      "baseSpecs": {
-        "range": 400,
-        "price": 70000,
-        "battery": 60
-      }
+  "de_de": {
+    "translations": {
+      "rangeUnit": "km",
+      "currency": "€",
+      "batteryUnit": "kWh"
     },
-    {
-      "name": "Tesla Model X",
-      "brand": "Tesla",
-      "img": "http://media.caranddriver.com/images/16q2/667349/2016-tesla-model-x-test-review-car-and-driver-photo-667986-s-429x262.jpg",
-      "url": "https://www.tesla.com/de_DE/modelx/design",
-      "available": true,
-      "baseSpecs": {
-        "range": 417,
-        "price": 102500,
-        "battery": 75
+    "cars": [
+      {
+        "name": "Tesla Model S",
+        "brand": "Tesla",
+        "img": "http://blog.caranddriver.com/wp-content/uploads/2016/04/2017-Tesla-Model-S-P90D-PLACEMENT.jpg",
+        "url": "https://www.tesla.com/de_DE/models/design",
+        "available": true,
+        "baseSpecs": {
+          "range": 400,
+          "price": 70000,
+          "battery": 60
+        }
+      },
+      {
+        "name": "Tesla Model X",
+        "brand": "Tesla",
+        "img": "http://media.caranddriver.com/images/16q2/667349/2016-tesla-model-x-test-review-car-and-driver-photo-667986-s-429x262.jpg",
+        "url": "https://www.tesla.com/de_DE/modelx/design",
+        "available": true,
+        "baseSpecs": {
+          "range": 417,
+          "price": 102500,
+          "battery": 75
+        }
+      },
+      {
+        "name": "Tesla Model 3",
+        "brand": "Tesla",
+        "img": "https://www.tesla.com/tesla_theme/assets/img/model3/section-initial-touch.jpg?20161116",
+        "url": "https://www.tesla.com/de_DE/model3",
+        "available": false,
+        "baseSpecs": {
+          "range": 208,
+          "price": 70000,
+          "battery": 60
+        }
+      },
+      {
+        "name": "Nissan Leaf",
+        "brand": "Nissan",
+        "img": "http://cdn.ecomento.tv/wp-content/uploads/2015/10/Nissan-LEAF-2016-Test-Preis-Daten8.jpg",
+        "url": "https://www.nissanusa.com/buildyournissan/modelLine/build/2017/LEF",
+        "available": true,
+        "baseSpecs": {
+          "range": 250,
+          "price": 24000,
+          "battery": 30
+        }
+      },
+      {
+        "name": "Mercedes-Benz B-Class",
+        "brand": "Mercedes-Benz",
+        "img": "http://www.carpixel.net/w/e15a22a0436fa40d038076ec467264ab/mercedes-benz-b-class-electric-drive-concept-car-wallpaper-20642.jpg",
+        "url": "http://www.mercedes-benz.de/content/germany/mpc/mpc_germany_website/de/home_mpc/passengercars/home/new_cars/models/b-class/w242.html",
+        "available": true,
+        "baseSpecs": {
+          "range": 200,
+          "price": 27000,
+          "battery": 28
+        }
+      },
+      {
+        "name": "Smart fortwo",
+        "brand": "Smart",
+        "img": "http://media.caranddriver.com/images/16q3/669366/2017-smart-electric-drive-official-photos-and-info-news-car-and-driver-photo-671223-s-429x262.jpg",
+        "url": "https://www.smart.com/de/de/index/smart-electric-drive.html",
+        "available": false,
+        "baseSpecs": {
+          "range": 0,
+          "price": 0,
+          "battery": 0
+        }
+      },
+      {
+        "name": "Smart forfour",
+        "brand": "Smart",
+        "img": "http://whatcar.media/jpg/50/0/0/960/640/0/0/0/0/aspectfit/0/0/0/0/0/0/images/uploads/inline/6dff3889eef322e41194578e581120ad959c89eb.jpg",
+        "available": false,
+        "baseSpecs": {
+          "range": 208,
+          "price": 70000,
+          "battery": 60
+        }
+      },
+      {
+        "name": "Kia Soul EV",
+        "brand": "Kia",
+        "img": "http://www.kia.com/de/specials/soul-ev/de/-/media/de/online-specials/soulev-2014-oktober/assets/images/technology/kia_soul_ev_technology_zero-emissions.jpg",
+        "url": "http://www.kia.com/de/specials/soul-ev/",
+        "available": true,
+        "baseSpecs": {
+          "range": 200,
+          "price": 29000,
+          "battery": 27
+        }
+      },
+      {
+        "name": "Renault Zoe",
+        "brand": "Resnault",
+        "img": "http://i0.auto-service.de/282/87282,pd=1/renault-zoe-2017.jpg",
+        "url": "https://www.renault.de/modellpalette/renault-modelluebersicht/zoe.html",
+        "available": true,
+        "baseSpecs": {
+          "range": 400,
+          "price": 25000,
+          "battery": 40
+        }
+      },
+      {
+        "name": "Ford Focus Electric",
+        "brand": "Ford",
+        "img": "http://images.hgmsites.net/med/2016-ford-focus-electric_100525722_m.jpg",
+        "url": "http://www.ford.de/Pkw-Modelle/FordFocus-Electric",
+        "available": true,
+        "baseSpecs": {
+          "range": 162,
+          "price": 35000,
+          "battery": null
+        }
+      },
+      {
+        "name": "Chevrolet Spark",
+        "brand": "Chevrolet",
+        "img": "https://d2yialgb4rifw7.cloudfront.net/bilder/original/5a9b47d90d16e3c0b44dd14d1ff85c2e.jpg",
+        "url": "http://www.chevrolet.com/spark-ev-electric-vehicle/build-your-own.html#/trim",
+        "available": false,
+        "baseSpecs": {
+          "range": 208,
+          "price": 26000,
+          "battery": 60
+        }
+      },
+      {
+        "name": "Opel Ampera",
+        "brand": "Opel",
+        "img": "",
+        "url": "",
+        "available": false,
+        "baseSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
+        }
+      },
+      {
+        "name": "Hyundai Ioniq",
+        "brand": "Hyundai",
+        "img": "http://i.auto-bild.de/ir_img/1/4/3/9/0/5/3/Hyundai-Ioniq-Genf-2016-Vorschau-560x373-31f4315aa6bb1082.jpg",
+        "url": "",
+        "available": false,
+        "baseSpecs": {
+          "range": 208,
+          "price": 70000,
+          "battery": 60
+        }
+      },
+      {
+        "name": "Volkswagen e-Golf",
+        "brand": "Volkswagen",
+        "img": "http://www.automobilesreview.com/gallery/2014-volkswagen-e-golf/2014-volkswagen-e-golf-03.jpg",
+        "url": "http://emobility.volkswagen.de/de/de/private/Autos/eGolf.html",
+        "available": true,
+        "baseSpecs": {
+          "range": 190,
+          "price": 35000,
+          "battery": 24
+        }
+      },
+      {
+        "name": "Volkswagen e-Up",
+        "brand": "Volkswagen",
+        "img": "http://www.derautomobilist.de/wp-content/uploads/2014/08/14-07-02electrifiedTour1.jpg",
+        "url": "http://emobility.volkswagen.com/int/en/private/cars/e-up.html",
+        "available": false,
+        "baseSpecs": {
+          "range": 208,
+          "price": 70000,
+          "battery": 60
+        }
       }
-    },
-    {
-      "name": "Tesla Model 3",
-      "brand": "Tesla",
-      "img": "https://www.tesla.com/tesla_theme/assets/img/model3/section-initial-touch.jpg?20161116",
-      "url": "https://www.tesla.com/de_DE/model3",
-      "available": false,
-      "baseSpecs": {
-        "range": 208,
-        "price": 70000,
-        "battery": 60
-      }
-    },
-    {
-      "name": "Nissan Leaf",
-      "brand": "Nissan",
-      "img": "http://cdn.ecomento.tv/wp-content/uploads/2015/10/Nissan-LEAF-2016-Test-Preis-Daten8.jpg",
-      "url": "https://www.nissanusa.com/buildyournissan/modelLine/build/2017/LEF",
-      "available": true,
-      "baseSpecs": {
-        "range": 250,
-        "price": 24000,
-        "battery": 30
-      }
-    },
-    {
-      "name": "Mercedes-Benz B-Class",
-      "brand": "Mercedes-Benz",
-      "img": "http://www.carpixel.net/w/e15a22a0436fa40d038076ec467264ab/mercedes-benz-b-class-electric-drive-concept-car-wallpaper-20642.jpg",
-      "url": "http://www.mercedes-benz.de/content/germany/mpc/mpc_germany_website/de/home_mpc/passengercars/home/new_cars/models/b-class/w242.html",
-      "available": true,
-      "baseSpecs": {
-        "range": 200,
-        "price": 27000,
-        "battery": 28
-      }
-    },
-    {
-      "name": "Smart fortwo",
-      "brand": "Smart",
-      "img": "http://media.caranddriver.com/images/16q3/669366/2017-smart-electric-drive-official-photos-and-info-news-car-and-driver-photo-671223-s-429x262.jpg",
-      "url": "https://www.smart.com/de/de/index/smart-electric-drive.html",
-      "available": false,
-      "baseSpecs": {
-        "range": 0,
-        "price": 0,
-        "battery": 0
-      }
-    },
-    {
-      "name": "Smart forfour",
-      "brand": "Smart",
-      "img": "http://whatcar.media/jpg/50/0/0/960/640/0/0/0/0/aspectfit/0/0/0/0/0/0/images/uploads/inline/6dff3889eef322e41194578e581120ad959c89eb.jpg",
-      "available": false,
-      "baseSpecs": {
-        "range": 208,
-        "price": 70000,
-        "battery": 60
-      }
-    },
-    {
-      "name": "Kia Soul EV",
-      "brand": "Kia",
-      "img": "http://www.kia.com/de/specials/soul-ev/de/-/media/de/online-specials/soulev-2014-oktober/assets/images/technology/kia_soul_ev_technology_zero-emissions.jpg",
-      "url": "http://www.kia.com/de/specials/soul-ev/",
-      "available": true,
-      "baseSpecs": {
-        "range": 200,
-        "price": 29000,
-        "battery": 27
-      }
-    },
-    {
-      "name": "Renault Zoe",
-      "brand": "Resnault",
-      "img": "http://i0.auto-service.de/282/87282,pd=1/renault-zoe-2017.jpg",
-      "url": "https://www.renault.de/modellpalette/renault-modelluebersicht/zoe.html",
-      "available": true,
-      "baseSpecs": {
-        "range": 400,
-        "price": 25000,
-        "battery": 40
-      }
-    },
-    {
-      "name": "Ford Focus Electric",
-      "brand": "Ford",
-      "img": "http://images.hgmsites.net/med/2016-ford-focus-electric_100525722_m.jpg",
-      "url": "http://www.ford.de/Pkw-Modelle/FordFocus-Electric",
-      "available": true,
-      "baseSpecs": {
-        "range": 162,
-        "price": 35000,
-        "battery": null
-      }
-    },
-    {
-      "name": "Chevrolet Spark",
-      "brand": "Chevrolet",
-      "img": "https://d2yialgb4rifw7.cloudfront.net/bilder/original/5a9b47d90d16e3c0b44dd14d1ff85c2e.jpg",
-      "url": "http://www.chevrolet.com/spark-ev-electric-vehicle/build-your-own.html#/trim",
-      "available": false,
-      "baseSpecs": {
-        "range": 208,
-        "price": 26000,
-        "battery": 60
-      }
-    },
-    {
-      "name": "Opel Ampera",
-      "brand": "Opel",
-      "img": "",
-      "url": "",
-      "available": false,
-      "baseSpecs": {
-        "range": null,
-        "price": null,
-        "battery": null
-      }
-    },
-    {
-      "name": "Hyundai Ioniq",
-      "brand": "Hyundai",
-      "img": "http://i.auto-bild.de/ir_img/1/4/3/9/0/5/3/Hyundai-Ioniq-Genf-2016-Vorschau-560x373-31f4315aa6bb1082.jpg",
-      "url": "",
-      "available": false,
-      "baseSpecs": {
-        "range": 208,
-        "price": 70000,
-        "battery": 60
-      }
-    },
-    {
-      "name": "Volkswagen e-Golf",
-      "brand": "Volkswagen",
-      "img": "http://www.automobilesreview.com/gallery/2014-volkswagen-e-golf/2014-volkswagen-e-golf-03.jpg",
-      "url": "http://emobility.volkswagen.de/de/de/private/Autos/eGolf.html",
-      "available": true,
-      "baseSpecs": {
-        "range": 190,
-        "price": 35000,
-        "battery": 24
-      }
-    },
-    {
-      "name": "Volkswagen e-Up",
-      "brand": "Volkswagen",
-      "img": "http://www.derautomobilist.de/wp-content/uploads/2014/08/14-07-02electrifiedTour1.jpg",
-      "url": "http://emobility.volkswagen.com/int/en/private/cars/e-up.html",
-      "available": false,
-      "baseSpecs": {
-        "range": 208,
-        "price": 70000,
-        "battery": 60
-      }
-    }
-  ]
+    ]
+  }
+
 
 }

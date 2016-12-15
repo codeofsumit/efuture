@@ -15,19 +15,28 @@ const database = firebase.database();
 
 const store = new Vuex.Store({
   state: {
-    cars: []
+    cars: [],
+    translations: {},
+    market: 'de_de'
   },
   mutations: {
     setCars(state, cars) {
       state.cars = cars;
-    }
+    },
+    setTranslations(state, translations) {
+      state.translations = translations;
+    },
+    setMarket(state, market) {
+      state.market = market;
+    },
   }
 });
 
-database.ref('/cars').once('value').then(function(result) {
-  var cars = result.val();
+database.ref('de_de').once('value').then(function(result) {
+  var cars = result.val().cars;
+  var translations = result.val().translations;
 
-  console.log(cars);
+  store.commit('setTranslations', translations);
 
   store.commit('setCars', cars);
 });
