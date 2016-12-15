@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "evfuture",
+  "scripts": {
+    "dev": "vbuild --dev",
+    "build": "vbuild"
+  },
+  "dependencies": {
+    "bulma": "^0.2.3",
+    "firebase": "^3.6.4",
+    "lodash": "^4.17.2",
+    "vue": "2.1.5",
+    "vuex": "^2.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "node-sass": "^4.0.0",
+    "sass-loader": "^4.1.0",
+    "vue-loader": "10.0.2",
+    "vue-template-compiler": "2.1.5"
+  }
+}

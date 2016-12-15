@@ -1,0 +1,40 @@
+
+$green: #23d160;
+$primary: $green;
+
+$link-visited: $primary;
+
+@import "~bulma";
+
+.isGreen {
+  color: $green;
+}
+
+.column {
+  // white-space: nowrap;
+}
+
+.filter {
+  display: none;
+}
+
+.flag {
+  width: 20px;
+}
+
+.announced {
+
+  img {
+    opacity: .3;
+  }
+
+  &:after {
+    content: "Announced";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
