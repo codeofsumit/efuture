@@ -19,28 +19,30 @@ $link-visited: $primary;
 }
 
 .flag {
-
+  border-radius: 50%;
   user-select: none;
+
+  background-size: auto 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
 
   &:hover {
     cursor: pointer;
   }
 
-  .placeholder-image {
-    width: 25px;
-    visibility: hidden;
-  }
-
   .de_de & {
     background-image: url('../assets/images/flags/de_de.png');
-    background-size: contain;
-    background-repeat: no-repeat;
   }
 
   .us_us & {
     background-image: url('../assets/images/flags/us_us.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+  }
+
+
+
+  .placeholder-image {
+    width: 22px;
+    visibility: hidden;
   }
 }
 
