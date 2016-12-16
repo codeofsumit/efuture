@@ -115,8 +115,8 @@
 
 <script>
 
-  import store from '../store';
   import _ from 'lodash';
+  import store from '../store';
 
   export default {
     store,
@@ -124,11 +124,11 @@
       changeMarket() {
         const newLang = this.market === 'us_us' ? 'de_de' : 'us_us';
         // store.commit('setMarket', newLang);
-      }
+      },
     },
     data() {
       return {
-      }
+      };
     },
     computed: {
       market() {
@@ -141,19 +141,19 @@
         return store.state.cars;
       },
       availableCars() {
-        return this.cars.filter((car) => car.available);
+        return this.cars.filter(car => car.available);
       },
       modelCount() {
         return this.availableCars.length;
       },
       brandCount() {
-        const brands = _.map(this.availableCars, (car) => car.brand);
+        const brands = _.map(this.availableCars, car => car.brand);
         const uniqueBrands = _.uniq(brands);
 
         return uniqueBrands.length;
-      }
-    }
-  }
+      },
+    },
+  };
 </script>
 
 <style lang="scss" src="../styles/app.scss"></style>
