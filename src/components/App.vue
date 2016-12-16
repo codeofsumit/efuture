@@ -69,7 +69,7 @@
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
-          <div class="column is-3" v-for="car in cars" v-if="car.available">
+          <div class="column is-3" v-for="car in availableCars">
             <div class="card">
               <div class="card-image" v-bind:class="{announced: !car.available}">
                 <figure class="image">

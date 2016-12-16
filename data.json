@@ -67,6 +67,18 @@
         }
       },
       {
+        "name": "BMW i3",
+        "brand": "BMW",
+        "img": "http://www.bmw.ie/content/dam/bmw/common/all-models/i-series/i3/2016/at-a-glance/BMWi-i3-OPC-at-a-glance-teaser-quick-start-guide.jpg/jcr:content/renditions/cq5dam.resized.img.485.low.time1462167288475.jpg",
+        "url": "http://www.bmw.de/vc/ncc/xhtml/start/startWithConfigUrl.faces;jsessionid=332ac62b1814878673551dd67522.5?country=DE&market=DE&productType=1&brand=BI&locale=de_DE&name=z5h5n0i9#MODEL_ENGINE",
+        "available": true,
+        "baseSpecs": {
+          "range": 190,
+          "price": 35000,
+          "battery": 60
+        }
+      },
+      {
         "name": "Smart fortwo",
         "brand": "Smart",
         "img": "http://media.caranddriver.com/images/16q3/669366/2017-smart-electric-drive-official-photos-and-info-news-car-and-driver-photo-671223-s-429x262.jpg",
@@ -122,7 +134,7 @@
         "baseSpecs": {
           "range": 162,
           "price": 35000,
-          "battery": null
+          "battery": 23
         }
       },
       {
