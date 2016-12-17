@@ -47,12 +47,12 @@
       </div>
     </section>
     <section class="section">
+      <div class="container">
+        <h1 class="title">Solltest du noch warten?</h1>
+        <h2 class="subtitle">Folgende Fahrzeuge wurden für die nächsten 12 Monate angekündigt.</h2>
+        <hr />
+      </div>
       <div class="container content">
-        <h2 class="title">Solltest du noch warten?</h2>
-        <hr  />
-        <p>
-          Folgende Autos wurden für die nächsten 12 Monate angekündigt.
-        </p>
         <div class="columns is-multiline">
           <Car v-for="car in announcedCars" v-bind:car="car"></Car>
         </div>

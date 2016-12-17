@@ -16,7 +16,7 @@
               <a class="link" v-bind:href="car.url" target="_blank">Zur Seite</a>
             </div>
           </div>
-          <ul>
+          <ul v-if="specsAvailable">
             <li v-if="car.baseSpecs.price">
               <span>Preis ab {{car.baseSpecs.price}} {{translations.currency}}</span>
             </li>
@@ -40,6 +40,9 @@
 </template>
 
 <script>
+
+  import _ from 'lodash';
+
   export default {
     props: {
       car: {
@@ -50,6 +53,14 @@
       return {
         translations: this.$store.state.translations,
       };
+    },
+    computed: {
+      specsAvailable() {
+        const specs = _.values(this.car.baseSpecs);
+        _.remove(specs, _.isNil);
+
+        return specs.length > 0;
+      },
     },
   };
 </script>
