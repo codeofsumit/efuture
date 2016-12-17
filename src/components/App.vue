@@ -19,95 +19,48 @@
         </div>
       </div>
     </section>
-    <section class="section filter">
-      <div class="container">
+    <section class="section">
+      <div class="filter container">
         <div class="columns">
           <div class="column">
-            <label>Minimum Range</label>
+            <label>Sortieren nach</label>
             <div class="control">
-              <input class="input" type="text" placeholder="e.g. 200"/>
-            </div>
-          </div>
-          <div class="column">
-            <label>Minimum Battery Capacity</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g. 60"/>
-            </div>
-          </div>
-          <div class="column">
-            <label>Maximum Price</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g. 45.000"/>
-            </div>
-          </div>
-          <div class="column">
-            <label>Brand</label>
-            <div class="control">
-              <span class="select">
-                <select class="select">
-                  <option>Mercedes-Benz</option>
-                  <option>Tesla</option>
-                  <option>BMW</option>
-                  <option>Audi</option>
-                  <option>Ford</option>
-                  <option>Nissan</option>
-                  <option>Smart</option>
-                  <option>Volvo</option>
-                  <option>Porsche</option>
-                  <option>Volkswagen</option>
+              <p class="select">
+                <select v-model="sortBy">
+                  <option value="brand">Marke</option>
+                  <option value="baseSpecs.price">Preis</option>
+                  <option value="baseSpecs.range">Reichweite</option>
+                  <option value="baseSpecs.battery">Kapazität</option>
                 </select>
-              </span>
-
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="section">
       <div class="container content">
         <!-- <h5 class="has-text-centered">
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
-          <div class="column is-3" v-for="car in availableCars">
-            <div class="card">
-              <div class="card-image" v-bind:class="{announced: !car.available}">
-                <figure class="image">
-                  <img v-bind:src="car.img" alt="">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  <div class="level">
-                    <div class="level-left">
-                      <strong>{{car.name}}</strong>
-                    </div>
-                    <div class="level-right" v-if="car.url">
-                      <a class="link" v-bind:href="car.url" target="_blank">Zur Seite</a>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>
-                      <span>Preis ab {{car.baseSpecs.price}} {{translations.currency}}</span>
-                    </li>
-                    <li>
-                      <span>Reichweite: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
-                    </li>
-                    <li>
-                      <span>Kapazität: {{car.baseSpecs.battery}} {{translations.batteryUnit}}</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Car v-for="car in availableCars" v-bind:car="car"></Car>
         </div>
-
+      </div>
+    </section>
+    <section class="section">
+      <div class="container content">
+        <h2 class="title">Solltest du noch warten?</h2>
+        <hr  />
+        <p>
+          Folgende Autos wurden für die nächsten 12 Monate angekündigt.
+        </p>
+        <div class="columns is-multiline">
+          <Car v-for="car in announcedCars" v-bind:car="car"></Car>
+        </div>
       </div>
     </section>
     <footer class="footer">
       <div class="container">
-        Made by <a href="https://www.twitter.com/tweetsofsumit" target="_blank">Sumit</a>
+        No guarantee for accurate information | Made by <a href="https://www.twitter.com/tweetsofsumit" target="_blank">a guy</a> who wants to buy an EV soon.
       </div>
     </footer>
   </div>
@@ -119,8 +72,13 @@
   import store from '../store';
   import credentials from '../../credentials.json';
 
+  import Car from './Car.vue';
+
   export default {
     store,
+    components: {
+      Car,
+    },
     methods: {
       changeMarket() {
         const newLang = this.market === 'us_us' ? 'de_de' : 'us_us';
@@ -129,6 +87,7 @@
     },
     data() {
       return {
+        sortBy: 'baseSpecs.range',
       };
     },
     computed: {
@@ -142,7 +101,24 @@
         return store.state.cars;
       },
       availableCars() {
-        return this.cars.filter(car => car.available);
+        let cars = this.cars.filter(car => car.available);
+        cars = _.sortBy(cars, car => _.get(car, this.sortBy));
+
+        if (this.sortBy !== 'brand') {
+          cars = _.reverse(cars);
+        }
+
+        return cars;
+      },
+      announcedCars() {
+        let cars = this.cars.filter(car => !car.available);
+        cars = _.sortBy(cars, car => _.get(car, this.sortBy));
+
+        if (this.sortBy !== 'brand') {
+          cars = _.reverse(cars);
+        }
+
+        return cars;
       },
       modelCount() {
         return this.availableCars.length;

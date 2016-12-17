@@ -6,16 +6,28 @@ $link-visited: $primary;
 
 @import "~bulma";
 
-.isGreen {
+.isGreen, .is-green {
   color: $green;
 }
 
-.column {
-  // white-space: nowrap;
+.is-red {
+  color: $red;
+}
+
+.car {
+
+
+  ul:empty {
+    display: none;
+  }
 }
 
 .filter {
-  display: none;
+  // display: none;
+
+  .columns {
+    // display: none;
+  }
 }
 
 .flag {
