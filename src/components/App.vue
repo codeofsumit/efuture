@@ -61,6 +61,8 @@
     <footer class="footer">
       <div class="container">
         No guarantee for accurate information | Made by <a href="https://www.twitter.com/tweetsofsumit" target="_blank">a guy</a> who wants to buy an EV soon.
+        | <a v-on:click="login()">Login</a>
+        <span v-show="allowed">Lalalala</span>
       </div>
     </footer>
   </div>
@@ -69,10 +71,29 @@
 <script>
 
   import _ from 'lodash';
+  import firebase from 'firebase';
   import store from '../store';
   import credentials from '../../credentials.json';
 
   import Car from './Car.vue';
+
+  firebase.auth().getRedirectResult().then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+
+    console.log(user);
+
+    store.commit('setUser', user);
+  }).catch(() => {
+    // Handle Errors here.
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // The email of the user's account used.
+    // const email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    // const credential = error.credential;
+    // ...
+  });
 
   export default {
     store,
@@ -84,6 +105,11 @@
         const newLang = this.market === 'us_us' ? 'de_de' : 'us_us';
         // store.commit('setMarket', newLang);
       },
+      login() {
+        const provider = new firebase.auth.GithubAuthProvider();
+
+        firebase.auth().signInWithRedirect(provider);
+      },
     },
     data() {
       return {
@@ -91,6 +117,9 @@
       };
     },
     computed: {
+      allowed() {
+        return store.state.allowed;
+      },
       market() {
         return store.state.market;
       },

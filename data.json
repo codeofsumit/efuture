@@ -17,6 +17,11 @@
           "price": 70000,
           "battery": 60,
           "biggerBatteryAvailable": true
+        },
+        "maxSpecs": {
+          "range": 600,
+          "price": 150000,
+          "battery": 100
         }
       },
       {
@@ -30,6 +35,11 @@
           "price": 102500,
           "battery": 75,
           "biggerBatteryAvailable": true
+        },
+        "maxSpecs": {
+          "range": 540,
+          "price": 157000,
+          "battery": 100
         }
       },
       {
@@ -43,6 +53,11 @@
           "price": 27000,
           "battery": 28,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -55,7 +70,12 @@
           "range": 190,
           "price": 35000,
           "battery": 60,
-          "biggerBatteryAvailable": false
+          "biggerBatteryAvailable": true
+        },
+        "maxSpecs": {
+          "range": 300,
+          "price": 37000,
+          "battery": 94
         }
       },
       {
@@ -69,13 +89,18 @@
           "price": 35000,
           "battery": 24,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
 
       {
         "name": "Nissan Leaf",
         "brand": "Nissan",
-        "img": "http://cdn.ecomento.tv/wp-content/uploads/2015/10/Nissan-LEAF-2016-Test-Preis-Daten8.jpg",
+        "img": "http://media.caranddriver.com/images/16q2/667349/2016-nissan-leaf-30kwh-instrumented-test-review-car-and-driver-photo-668707-s-429x262.jpg",
         "url": "https://www.nissanusa.com/buildyournissan/modelLine/build/2017/LEF",
         "available": true,
         "baseSpecs": {
@@ -83,6 +108,11 @@
           "price": 24000,
           "battery": 30,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -96,6 +126,11 @@
           "price": 29000,
           "battery": 27,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -109,6 +144,11 @@
           "price": 25000,
           "battery": 40,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -122,6 +162,11 @@
           "price": 35000,
           "battery": 23,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -135,6 +180,11 @@
           "price": 34000,
           "battery": 28,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -148,6 +198,11 @@
           "price": null,
           "battery": null,
           "biggerBatteryAvailable": null
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -161,6 +216,11 @@
           "price": null,
           "battery": null,
           "biggerBatteryAvailable": null
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -174,6 +234,11 @@
           "price": null,
           "battery": 60,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       },
       {
@@ -187,6 +252,11 @@
           "price": 27000,
           "battery": 18.7,
           "biggerBatteryAvailable": false
+        },
+        "maxSpecs": {
+          "range": null,
+          "price": null,
+          "battery": null
         }
       }
     ]

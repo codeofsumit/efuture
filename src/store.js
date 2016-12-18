@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 import firebase from 'firebase';
 import credentials from '../credentials.json';
 
@@ -9,6 +9,7 @@ Vue.use(Vuex);
 firebase.initializeApp({
   apiKey: credentials.firebase.apiKey,
   databaseURL: credentials.firebase.databaseURL,
+  authDomain: credentials.firebase.authURL,
 });
 
 const database = firebase.database();
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
   state: {
     cars: [],
     translations: {},
-    market: 'de_de'
+    market: 'de_de',
+    allowed: false,
   },
   mutations: {
     setCars(state, cars) {
@@ -29,12 +31,19 @@ const store = new Vuex.Store({
     setMarket(state, market) {
       state.market = market;
     },
+    setUser(state, user) {
+      if (user.email === 'sk@outlook.com') {
+        state.allowed = true;
+      } else {
+        state.allowed = false;
+      }
+    },
   }
 });
 
-database.ref('de_de').once('value').then(function(result) {
-  var cars = result.val().cars;
-  var translations = result.val().translations;
+database.ref('de_de').once('value').then((result) => {
+  const cars = result.val().cars;
+  const translations = result.val().translations;
 
   store.commit('setTranslations', translations);
 

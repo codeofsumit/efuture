@@ -26,7 +26,7 @@
             <li v-if="car.baseSpecs.battery">
               <span>Kapazität: {{car.baseSpecs.battery}} {{translations.batteryUnit}}</span>
             </li>
-            <li v-if="car.baseSpecs.biggerBatteryAvailable">
+            <li v-if="car.baseSpecs.biggerBatteryAvailable !== null">
               Batterie Upgrade:
               <span v-bind:class="car.baseSpecs.biggerBatteryAvailable ? 'is-green' : 'is-red'">
                 {{car.baseSpecs.biggerBatteryAvailable ? 'Ja' : 'Nein'}}
