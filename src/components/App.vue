@@ -20,6 +20,13 @@
       </div>
     </section>
     <section class="section">
+      <div class="container content" v-if="allowed">
+        <div class="columns">
+            <CarPreview></CarPreview>
+            <NewCar></NewCar>
+        </div>
+        <hr />
+      </div>
       <div class="filter container">
         <div class="columns">
           <div class="column">
@@ -42,8 +49,6 @@
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
-          <NewCar></NewCar>
-          <CarPreview></CarPreview>
           <Car v-for="car in availableCars" v-bind:car="car"></Car>
         </div>
       </div>

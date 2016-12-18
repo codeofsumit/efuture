@@ -8,6 +8,7 @@
     "cars": [
       {
         "name": "Tesla Model S",
+        "model": "Model S",
         "brand": "Tesla",
         "img": "http://blog.caranddriver.com/wp-content/uploads/2016/04/2017-Tesla-Model-S-P90D-PLACEMENT.jpg",
         "url": "https://www.tesla.com/de_DE/models/design",
@@ -26,6 +27,7 @@
       },
       {
         "name": "Tesla Model X",
+        "model": "Model X",
         "brand": "Tesla",
         "img": "http://st.motortrend.com/uploads/sites/10/2016/05/2016-Tesla-Model-X-P90D-front-three-quarter-in-motion.jpg",
         "url": "https://www.tesla.com/de_DE/modelx/design",
@@ -43,7 +45,8 @@
         }
       },
       {
-        "name": "Mercedes-Benz B-Class",
+        "name": "Mercedes-Benz B-Klasse",
+        "model": "B-Klasse",
         "brand": "Mercedes-Benz",
         "img": "http://www.riess-gruppe.de/uploads/pics/b-klasse_electric.jpg",
         "url": "http://www.mercedes-benz.de/content/germany/mpc/mpc_germany_website/de/home_mpc/passengercars/home/new_cars/models/b-class/w242.html",
@@ -62,6 +65,7 @@
       },
       {
         "name": "BMW i3",
+        "model": "i3",
         "brand": "BMW",
         "img": "http://www.bmw.ie/content/dam/bmw/common/all-models/i-series/i3/2016/at-a-glance/BMWi-i3-OPC-at-a-glance-teaser-quick-start-guide.jpg/jcr:content/renditions/cq5dam.resized.img.485.low.time1462167288475.jpg",
         "url": "http://www.bmw.de/vc/ncc/xhtml/start/startWithConfigUrl.faces;jsessionid=332ac62b1814878673551dd67522.5?country=DE&market=DE&productType=1&brand=BI&locale=de_DE&name=z5h5n0i9#MODEL_ENGINE",
@@ -80,6 +84,7 @@
       },
       {
         "name": "Volkswagen e-Golf",
+        "model": "e-Golf",
         "brand": "Volkswagen",
         "img": "http://www.automobilesreview.com/gallery/2014-volkswagen-e-golf/2014-volkswagen-e-golf-03.jpg",
         "url": "http://emobility.volkswagen.de/de/de/private/Autos/eGolf.html",
@@ -99,6 +104,7 @@
 
       {
         "name": "Nissan Leaf",
+        "model": "Leaf",
         "brand": "Nissan",
         "img": "http://media.caranddriver.com/images/16q2/667349/2016-nissan-leaf-30kwh-instrumented-test-review-car-and-driver-photo-668707-s-429x262.jpg",
         "url": "https://www.nissanusa.com/buildyournissan/modelLine/build/2017/LEF",
@@ -117,6 +123,7 @@
       },
       {
         "name": "Kia Soul EV",
+        "model": "Soul EV",
         "brand": "Kia",
         "img": "http://i.auto-bild.de/ir_img/1/1/4/9/5/4/8/Kia-Soul-EV-1200x800-6e04eca61902e511.jpg",
         "url": "http://www.kia.com/de/specials/soul-ev/",
@@ -135,7 +142,8 @@
       },
       {
         "name": "Renault Zoe",
-        "brand": "Resnault",
+        "model": "Zoe",
+        "brand": "Renault",
         "img": "http://i0.auto-service.de/282/87282,pd=1/renault-zoe-2017.jpg",
         "url": "https://www.renault.de/modellpalette/renault-modelluebersicht/zoe.html",
         "available": true,
@@ -153,6 +161,7 @@
       },
       {
         "name": "Ford Focus Electric",
+        "model": "Focus Electric",
         "brand": "Ford",
         "img": "http://images.hgmsites.net/med/2016-ford-focus-electric_100525722_m.jpg",
         "url": "http://www.ford.de/Pkw-Modelle/FordFocus-Electric",
@@ -171,6 +180,7 @@
       },
       {
         "name": "Hyundai Ioniq",
+        "model": "Ioniq",
         "brand": "Hyundai",
         "img": "http://i.auto-bild.de/ir_img/1/4/3/9/0/5/3/Hyundai-Ioniq-Genf-2016-Vorschau-560x373-31f4315aa6bb1082.jpg",
         "url": "http://www.hyundai.de/Modelle/Alle-Modelle/IONIQ-Elektro.html",
@@ -189,6 +199,7 @@
       },
       {
         "name": "Smart fortwo",
+        "model": "fortwo",
         "brand": "Smart",
         "img": "http://images.hgmsites.net/med/2017-smart-fortwo-electric-drive_100566136_m.jpg",
         "url": "https://www.smart.com/de/de/index/smart-electric-drive.html",
@@ -207,6 +218,7 @@
       },
       {
         "name": "Smart forfour",
+        "model": "forfour",
         "brand": "Smart",
         "img": "http://whatcar.media/jpg/50/0/0/960/640/0/0/0/0/aspectfit/0/0/0/0/0/0/images/uploads/inline/6dff3889eef322e41194578e581120ad959c89eb.jpg",
         "url": "https://www.smart.com/de/de/index/smart-electric-drive.html",
@@ -225,6 +237,7 @@
       },
       {
         "name": "Opel Ampera",
+        "model": "Ampera",
         "brand": "Opel",
         "img": "http://www.manager-magazin.de/images/image-955514-galleryV9-uisp-955514.jpg",
         "url": "http://www.ampera-e.de/",
@@ -243,6 +256,7 @@
       },
       {
         "name": "Volkswagen e-Up",
+        "model": "e-Up",
         "brand": "Volkswagen",
         "img": "http://www.volkswagen.de/content/medialib/vwd4/global/mom/up-pa/content/up1161_1-2-front/_jcr_content/renditions/item.685.325.file/up1161_1-2-front.jpg",
         "url": "http://up.volkswagen.de/?model=eup",

@@ -21,7 +21,7 @@ const store = new Vuex.Store({
     market: 'de_de',
     allowed: false,
     newCar: {
-      name: '',
+      model: '',
       brand: '',
       img: 'https://getuikit.com/docs/images/placeholder_600x400.svg',
       url: '',
@@ -30,7 +30,7 @@ const store = new Vuex.Store({
         range: null,
         price: null,
         battery: null,
-        biggerBatteryAvailable: null,
+        biggerBatteryAvailable: false,
       },
       maxSpecs: {
         range: null,

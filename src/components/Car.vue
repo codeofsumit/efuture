@@ -10,7 +10,7 @@
         <div class="content">
           <div class="level">
             <div class="level-left">
-              <strong>{{car.name}}</strong>
+              <strong>{{car.brand}} {{car.model}}</strong>
             </div>
             <div class="level-right" v-if="car.url">
               <a class="link" v-bind:href="car.url" target="_blank">Zur Seite</a>

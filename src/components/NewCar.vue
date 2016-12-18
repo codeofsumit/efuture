@@ -1,23 +1,23 @@
 <template>
-  <div class="column is-4 car">
+  <div class="column is-6 car">
     <div class="card is-fullwidth">
       <div class="card-content">
         <div class="content">
+        <label class="label">Car Brand</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="Tesla" v-model="car.brand">
+        </p>
           <label class="label">Car Model</label>
           <p class="control">
-            <input class="input" type="text" placeholder="Tesla Model S" v-model="car.name">
-          </p>
-          <label class="label">Car Brand</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="Tesla" v-model="car.brand">
+            <input class="input" type="text" placeholder="Model S" v-model="car.model">
           </p>
           <label class="label">Image URL</label>
           <p class="control">
-            <input class="input" type="text" placeholder="http://cdn.com/image.jpg" v-model="car.img">
+            <input class="input" type="url" placeholder="http://cdn.com/image.jpg" v-model="car.img">
           </p>
           <label class="label">Page URL</label>
           <p class="control">
-            <input class="input" type="text" placeholder="http://tesla.com/models" v-model="car.url">
+            <input class="input" type="url" placeholder="http://tesla.com/models" v-model="car.url">
           </p>
           <label class="label">Price</label>
           <p class="control">
@@ -31,6 +31,7 @@
           <p class="control">
             <input class="input" type="number" placeholder="60" v-model="car.baseSpecs.battery">
           </p>
+          <label class="label"><input class="checkbox" type="checkbox" v-model="car.baseSpecs.biggerBatteryAvailable" /> Bigger Battery?</label>
           <label class="label"><input class="checkbox" type="checkbox" v-model="car.available" /> Available</label>
         </div>
       </div>
