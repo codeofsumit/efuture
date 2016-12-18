@@ -20,6 +20,24 @@ const store = new Vuex.Store({
     translations: {},
     market: 'de_de',
     allowed: false,
+    newCar: {
+      name: '',
+      brand: '',
+      img: 'https://getuikit.com/docs/images/placeholder_600x400.svg',
+      url: '',
+      available: false,
+      baseSpecs: {
+        range: null,
+        price: null,
+        battery: null,
+        biggerBatteryAvailable: null,
+      },
+      maxSpecs: {
+        range: null,
+        price: null,
+        battery: null,
+      },
+    },
   },
   mutations: {
     setCars(state, cars) {

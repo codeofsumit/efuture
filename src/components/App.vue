@@ -42,6 +42,8 @@
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
+          <NewCar></NewCar>
+          <CarPreview></CarPreview>
           <Car v-for="car in availableCars" v-bind:car="car"></Car>
         </div>
       </div>
@@ -62,7 +64,6 @@
       <div class="container">
         No guarantee for accurate information | Made by <a href="https://www.twitter.com/tweetsofsumit" target="_blank">a guy</a> who wants to buy an EV soon.
         | <a v-on:click="login()">Login</a>
-        <span v-show="allowed">Lalalala</span>
       </div>
     </footer>
   </div>
@@ -76,6 +77,8 @@
   import credentials from '../../credentials.json';
 
   import Car from './Car.vue';
+  import NewCar from './NewCar.vue';
+  import CarPreview from './NewCarPreview.vue';
 
   firebase.auth().getRedirectResult().then((result) => {
     // The signed-in user info.
@@ -99,6 +102,8 @@
     store,
     components: {
       Car,
+      NewCar,
+      CarPreview,
     },
     methods: {
       changeMarket() {
