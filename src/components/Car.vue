@@ -1,7 +1,7 @@
 <template>
   <div class="column is-4 car">
     <div class="card is-fullwidth">
-      <div class="card-image">
+      <div class="card-image" v-on:click="edit">
         <figure class="image">
           <img v-bind:src="car.img" alt="">
         </figure>
@@ -48,6 +48,8 @@
       car: {
         type: Object,
       },
+      carId: {
+      },
     },
     data() {
       return {
@@ -60,6 +62,13 @@
         _.remove(specs, _.isNil);
 
         return specs.length > 0;
+      },
+    },
+    methods: {
+      edit() {
+        // if (this.$store.state.allowed) {
+        this.$store.commit('setEditCar', this.carId);
+        // }
       },
     },
   };

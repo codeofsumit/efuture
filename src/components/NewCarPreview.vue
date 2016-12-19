@@ -33,7 +33,7 @@
               </span>
             </li>
           </ul>
-          <button class="button is-primary">Speichern</button>
+          <button v-bind:class="{'is-loading': loading}" class="button is-primary" v-on:click="save">Speichern</button>
         </div>
       </div>
     </div>
@@ -47,11 +47,12 @@
   export default {
     data() {
       return {
+        loading: false,
       };
     },
     computed: {
       car() {
-        return this.$store.state.newCar;
+        return this.$store.state.editCar.car;
       },
       translations() {
         return this.$store.state.translations;
@@ -61,6 +62,19 @@
         _.remove(specs, _.isNil);
 
         return specs.length > 0;
+      },
+    },
+    methods: {
+      save() {
+        if (this.loading) {
+          return false;
+        }
+        this.loading = true;
+        this.$store.dispatch('saveCar').then(() => {
+          this.loading = false;
+        });
+
+        return true;
       },
     },
   };

@@ -41,12 +41,10 @@
 
 <script>
 
-  // import _ from 'lodash';
-
   export default {
     computed: {
       car() {
-        return this.$store.state.newCar;
+        return this.$store.state.editCar.car;
       },
     },
   };

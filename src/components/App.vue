@@ -20,7 +20,8 @@
       </div>
     </section>
     <section class="section">
-      <div class="container content" v-if="allowed">
+      <div class="container content">
+        <!-- v-if="allowed" -->
         <div class="columns">
             <CarPreview></CarPreview>
             <NewCar></NewCar>
@@ -49,7 +50,7 @@
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
-          <Car v-for="car in availableCars" v-bind:car="car"></Car>
+          <Car v-for="(car, id) in availableCars" v-bind:car="car" v-bind:carId="id"></Car>
         </div>
       </div>
     </section>
@@ -61,7 +62,7 @@
       </div>
       <div class="container content">
         <div class="columns is-multiline">
-          <Car v-for="car in announcedCars" v-bind:car="car"></Car>
+          <Car v-for="(car, id) in announcedCars" v-bind:car="car" v-bind:carId="id"></Car>
         </div>
       </div>
     </section>
@@ -88,9 +89,6 @@
   firebase.auth().getRedirectResult().then((result) => {
     // The signed-in user info.
     const user = result.user;
-
-    console.log(user);
-
     store.commit('setUser', user);
   }).catch(() => {
     // Handle Errors here.
@@ -139,24 +137,19 @@
       cars() {
         return store.state.cars;
       },
-      availableCars() {
-        let cars = this.cars.filter(car => car.available);
-        cars = _.sortBy(cars, car => _.get(car, this.sortBy));
+      sortedCars() {
+        const cars = this.cars;
 
-        if (this.sortBy !== 'brand') {
-          cars = _.reverse(cars);
-        }
+        console.log(this.sortBy);
 
         return cars;
       },
+      availableCars() {
+        const cars = _.pickBy(this.sortedCars, car => car.available);
+        return cars;
+      },
       announcedCars() {
-        let cars = this.cars.filter(car => !car.available);
-        cars = _.sortBy(cars, car => _.get(car, this.sortBy));
-
-        if (this.sortBy !== 'brand') {
-          cars = _.reverse(cars);
-        }
-
+        const cars = _.pickBy(this.sortedCars, car => !car.available);
         return cars;
       },
       modelCount() {

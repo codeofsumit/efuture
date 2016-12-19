@@ -2,5 +2,8 @@
   "extends": "airbnb-base",
   "plugins": [
     "html"
-  ]
+  ],
+  "rules": {
+    "no-param-reassign": 0
+  }
 }
