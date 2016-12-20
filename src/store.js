@@ -41,6 +41,7 @@ const store = new Vuex.Store({
     market: 'de_de',
     allowed: false,
     editCar: {
+      id: undefined,
       car: _.cloneDeep(newCarModel),
     },
   },
@@ -97,7 +98,7 @@ const store = new Vuex.Store({
         state.editCar.car = store.state.cars[carId];
       } else {
         state.editCar.car = _.cloneDeep(newCarModel);
-        delete state.editCar.id;
+        state.editCar.id = undefined;
       }
     },
   },

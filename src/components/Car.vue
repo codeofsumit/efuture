@@ -48,8 +48,7 @@
       car: {
         type: Object,
       },
-      carId: {
-      },
+      carId: {},
     },
     data() {
       return {

@@ -3,10 +3,15 @@
     <div class="card is-fullwidth">
       <div class="card-content">
         <div class="content">
-        <label class="label">Car Brand</label>
-        <p class="control">
-          <input class="input" type="text" placeholder="Tesla" v-model="car.brand">
-        </p>
+          <label v-if="carId" class="label">Edit Existing Car</label>
+          <p v-if="carId" class="control has-addons">
+            <input disabled class="input" type="text" placeholder="Tesla" v-model="carId">
+            <button class="button is-primary" v-on:click="createNewCar()">Create New Car Instead</button>
+          </p>
+          <label class="label">Car Brand</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="Tesla" v-model="car.brand">
+          </p>
           <label class="label">Car Model</label>
           <p class="control">
             <input class="input" type="text" placeholder="Model S" v-model="car.model">
@@ -45,6 +50,14 @@
     computed: {
       car() {
         return this.$store.state.editCar.car;
+      },
+      carId() {
+        return this.$store.state.editCar.id;
+      },
+    },
+    methods: {
+      createNewCar() {
+        this.$store.commit('setEditCar');
       },
     },
   };
