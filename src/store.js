@@ -50,7 +50,7 @@ const store = new Vuex.Store({
       const id = store.state.editCar.id;
       const car = store.state.editCar.car;
 
-      const callback = (result) => {
+      const callback = () => {
         context.commit('setEditCar');
         context.dispatch('getCars');
       };
@@ -92,7 +92,7 @@ const store = new Vuex.Store({
       state.market = market;
     },
     setUser(state, user) {
-      if (user.email === 'sk@outlook.com') {
+      if (user.uid === 'HrpTfO06FHMH2hI44uzcBmhTkWj2') {
         state.allowed = true;
       } else {
         state.allowed = false;
