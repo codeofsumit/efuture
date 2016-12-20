@@ -71,7 +71,13 @@ const store = new Vuex.Store({
       database.ref('de_de/carlist').once('value').then((result) => {
         const cars = result.val();
 
-        context.commit('setCars', cars);
+        // convert to array first
+        const carArr = _.map(cars, (car, id) => {
+          car.id = id;
+          return car;
+        });
+
+        context.commit('setCars', carArr);
       });
     },
   },
@@ -95,7 +101,7 @@ const store = new Vuex.Store({
     setEditCar(state, carId) {
       if (carId) {
         state.editCar.id = carId;
-        state.editCar.car = store.state.cars[carId];
+        state.editCar.car = _.find(store.state.cars, ['id', carId]);
       } else {
         state.editCar.car = _.cloneDeep(newCarModel);
         state.editCar.id = undefined;

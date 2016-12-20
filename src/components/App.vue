@@ -29,15 +29,26 @@
       </div>
       <div class="filter container">
         <div class="columns">
-          <div class="column">
+          <div class="column is-2">
             <label>Sortieren nach</label>
             <div class="control">
-              <p class="select">
+              <p class="select is-fullwidth">
                 <select v-model="sortBy">
                   <option value="brand">Marke</option>
                   <option value="baseSpecs.price">Preis</option>
                   <option value="baseSpecs.range">Reichweite</option>
                   <option value="baseSpecs.battery">Kapazität</option>
+                </select>
+              </p>
+            </div>
+          </div>
+          <div class="column is-2">
+            <label>Reihenfolge</label>
+            <div class="control">
+              <p class="select is-fullwidth">
+                <select v-model="sortOrder">
+                  <option value="dsc">Absteigend</option>
+                  <option value="asc">Aufsteigend</option>
                 </select>
               </p>
             </div>
@@ -49,7 +60,7 @@
           Es gibt {{modelCount}} Autos von {{brandCount}} Marken. Zu wenig!
         </h5> -->
         <div class="columns is-multiline">
-          <Car v-for="(car, id) in availableCars" v-bind:car="car" v-bind:carId="id"></Car>
+          <Car v-for="car in availableCars" v-bind:car="car" v-bind:carId="car.id"></Car>
         </div>
       </div>
     </section>
@@ -61,7 +72,7 @@
       </div>
       <div class="container content">
         <div class="columns is-multiline">
-          <Car v-for="(car, id) in announcedCars" v-bind:car="car" v-bind:carId="id"></Car>
+          <Car v-for="car in announcedCars" v-bind:car="car" v-bind:carId="car.id"></Car>
         </div>
       </div>
     </section>
@@ -122,6 +133,7 @@
     data() {
       return {
         sortBy: 'baseSpecs.range',
+        sortOrder: 'dsc',
       };
     },
     computed: {
@@ -138,21 +150,16 @@
         return store.state.cars;
       },
       sortedCars() {
-        const cars = this.cars;
-
-        const why = _.toPairs(cars);
-        const where = _.sortBy(why, '[1].brand');
-        const what = _.fromPairs(where);
-
-        console.log(what);
+        let cars = _.sortBy(this.cars, this.sortBy);
+        cars = this.sortOrder === 'asc' ? cars : _.reverse(cars);
         return cars;
       },
       availableCars() {
-        const cars = _.pickBy(this.sortedCars, car => car.available);
+        const cars = _.filter(this.sortedCars, car => car.available);
         return cars;
       },
       announcedCars() {
-        const cars = _.pickBy(this.sortedCars, car => !car.available);
+        const cars = _.filter(this.sortedCars, car => !car.available);
         return cars;
       },
       modelCount() {
