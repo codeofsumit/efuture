@@ -103,7 +103,6 @@
       store.commit('setUser', user);
     } else {
       // No user is signed in.
-      console.log('no user');
     }
   });
 
