@@ -20,8 +20,7 @@
       </div>
     </section>
     <section class="section">
-      <div class="container content">
-        <!-- v-if="allowed" -->
+      <div class="container content" v-if="allowed">
         <div class="columns">
             <CarPreview></CarPreview>
             <NewCar></NewCar>
@@ -69,7 +68,8 @@
     <footer class="footer">
       <div class="container">
         No guarantee for accurate information | Made by <a href="https://www.twitter.com/tweetsofsumit" target="_blank">a guy</a> who wants to buy an EV soon.
-        | <a v-on:click="login()">Login</a>
+        <span v-if="!allowed"> | <a v-on:click="login()">Login</a></span>
+        <span v-if="allowed"> | <a v-on:click="logout()">Logout</a></span>
       </div>
     </footer>
   </div>
@@ -86,19 +86,14 @@
   import NewCar from './NewCar.vue';
   import CarPreview from './NewCarPreview.vue';
 
-  firebase.auth().getRedirectResult().then((result) => {
-    // The signed-in user info.
-    const user = result.user;
-    store.commit('setUser', user);
-  }).catch(() => {
-    // Handle Errors here.
-    // const errorCode = error.code;
-    // const errorMessage = error.message;
-    // The email of the user's account used.
-    // const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    // const credential = error.credential;
-    // ...
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in.
+      store.commit('setUser', user);
+    } else {
+      // No user is signed in.
+      console.log('no user');
+    }
   });
 
   export default {
@@ -117,6 +112,11 @@
         const provider = new firebase.auth.GithubAuthProvider();
 
         firebase.auth().signInWithRedirect(provider);
+      },
+      logout() {
+        firebase.auth().signOut().then(() => {
+          store.commit('setUser', {});
+        });
       },
     },
     data() {
@@ -140,8 +140,11 @@
       sortedCars() {
         const cars = this.cars;
 
-        console.log(this.sortBy);
+        const why = _.toPairs(cars);
+        const where = _.sortBy(why, '[1].brand');
+        const what = _.fromPairs(where);
 
+        console.log(what);
         return cars;
       },
       availableCars() {

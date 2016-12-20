@@ -70,9 +70,14 @@
           return false;
         }
         this.loading = true;
-        this.$store.dispatch('saveCar').then(() => {
-          this.loading = false;
-        });
+        this.$store.dispatch('saveCar').then(
+          () => {
+            this.loading = false;
+          },
+          () => {
+            this.loading = false;
+          },
+        );
 
         return true;
       },
