@@ -7,7 +7,7 @@
             <div class="level-left">
               <div>
                 <h1 class="title">The <span class="isGreen">E</span>lectric Future, is it here yet?</h1>
-                <h2 class="subtitle">Eine Liste von Elektrofahrzeugen die <u>heute</u> zu kaufen sind!</h2>
+                <h2 class="subtitle">{{translations.subtitle}}</h2>
               </div>
             </div>
             <div class="level-right">
@@ -30,25 +30,25 @@
       <div class="filter container">
         <div class="columns">
           <div class="column is-2">
-            <label>Sortieren nach</label>
+            <label>{{translations.sortBy}}</label>
             <div class="control">
               <p class="select is-fullwidth">
                 <select v-model="sortBy">
-                  <option value="brand">Marke</option>
-                  <option value="baseSpecs.price">Preis</option>
-                  <option value="baseSpecs.range">Reichweite</option>
-                  <option value="baseSpecs.battery">Kapazität</option>
+                  <option value="brand">{{translations.brand}}</option>
+                  <option value="baseSpecs.price">{{translations.price}}</option>
+                  <option value="baseSpecs.range">{{translations.range}}</option>
+                  <option value="baseSpecs.battery">{{translations.battery}}</option>
                 </select>
               </p>
             </div>
           </div>
           <div class="column is-2">
-            <label>Reihenfolge</label>
+            <label>{{translations.order}}</label>
             <div class="control">
               <p class="select is-fullwidth">
                 <select v-model="sortOrder">
-                  <option value="dsc">Absteigend</option>
-                  <option value="asc">Aufsteigend</option>
+                  <option value="dsc">{{translations.dsc}}</option>
+                  <option value="asc">{{translations.asc}}</option>
                 </select>
               </p>
             </div>
@@ -66,8 +66,8 @@
     </section>
     <section class="section">
       <div class="container">
-        <h1 class="title">Solltest du noch warten?</h1>
-        <h2 class="subtitle">Folgende Fahrzeuge wurden für die nächsten 12 Monate angekündigt.</h2>
+        <h1 class="title">{{translations.shouldYouWait}}</h1>
+        <h2 class="subtitle">{{translations.upcomingCars}}</h2>
         <hr />
       </div>
       <div class="container content">

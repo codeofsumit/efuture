@@ -13,26 +13,26 @@
               <strong>{{car.brand}} {{car.model}}</strong>
             </div>
             <div class="level-right" v-if="car.url">
-              <a class="link" v-bind:href="car.url" target="_blank">Zur Seite</a>
+              <a class="link" v-bind:href="car.url" target="_blank">{{translations.toPage}}</a>
             </div>
           </div>
           <ul v-if="specsAvailable">
             <li v-if="car.baseSpecs.price">
-              <span>Preis ab</span>
+              <span>{{translations.priceFrom}}:</span>
               <span v-if="translations.currency === '$'">{{translations.currency}}</span>
               <span>{{car.baseSpecs.price}}</span>
               <span v-if="translations.currency === '€'">{{translations.currency}}</span>
             </li>
             <li v-if="car.baseSpecs.range">
-              <span>Reichweite: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
+              <span>{{translations.range}}: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
             </li>
             <li v-if="car.baseSpecs.battery">
-              <span>Kapazität: {{car.baseSpecs.battery}} {{translations.batteryUnit}}</span>
+              <span>{{translations.capacity}}: {{car.baseSpecs.battery}} {{translations.batteryUnit}}</span>
             </li>
             <li v-if="car.baseSpecs.biggerBatteryAvailable !== null">
-              Batterie Upgrade:
+              {{translations.batteryUpgrade}}:
               <span v-bind:class="car.baseSpecs.biggerBatteryAvailable ? 'is-green' : 'is-red'">
-                {{car.baseSpecs.biggerBatteryAvailable ? 'Ja' : 'Nein'}}
+                {{car.baseSpecs.biggerBatteryAvailable ? `${translations.yes}` : `${translations.no}`}}
               </span>
             </li>
           </ul>
