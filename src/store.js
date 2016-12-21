@@ -38,7 +38,7 @@ const store = new Vuex.Store({
   state: {
     cars: [],
     translations: {},
-    market: 'de_de',
+    market: 'us_us',
     allowed: false,
     editCar: {
       id: undefined,
@@ -49,6 +49,7 @@ const store = new Vuex.Store({
     saveCar(context) {
       const id = store.state.editCar.id;
       const car = store.state.editCar.car;
+      const market = store.state.market;
 
       const callback = () => {
         context.commit('setEditCar');
@@ -58,9 +59,9 @@ const store = new Vuex.Store({
       let promise;
 
       if (id) {
-        promise = database.ref(`de_de/carlist/${id}`).set(car);
+        promise = database.ref(`${market}/carlist/${id}`).set(car);
       } else {
-        promise = database.ref('de_de/carlist').push(car);
+        promise = database.ref(`${market}/carlist`).push(car);
       }
 
       promise.then(callback);
@@ -68,7 +69,9 @@ const store = new Vuex.Store({
       return promise;
     },
     getCars(context) {
-      database.ref('de_de/carlist').once('value').then((result) => {
+      const market = store.state.market;
+
+      database.ref(`${market}/carlist`).once('value').then((result) => {
         const cars = result.val();
 
         // convert to array first
@@ -90,6 +93,7 @@ const store = new Vuex.Store({
     },
     setMarket(state, market) {
       state.market = market;
+      getMarketData();
     },
     setUser(state, user) {
       if (user.uid === 'HrpTfO06FHMH2hI44uzcBmhTkWj2') {
@@ -110,12 +114,18 @@ const store = new Vuex.Store({
   },
 });
 
-store.dispatch('getCars');
+const getMarketData = () => {
+  // TODO: find a better place for this
+  store.dispatch('getCars');
 
-database.ref('de_de').once('value').then((result) => {
-  const translations = result.val().translations;
+  // TODO: place this into an action
+  database.ref(`${store.state.market}/translations`).once('value').then((result) => {
+    const translations = result.val();
 
-  store.commit('setTranslations', translations);
-});
+    store.commit('setTranslations', translations);
+  });
+};
+
+getMarketData();
 
 export default store;

@@ -116,7 +116,7 @@
     methods: {
       changeMarket() {
         const newLang = this.market === 'us_us' ? 'de_de' : 'us_us';
-        // store.commit('setMarket', newLang);
+        store.commit('setMarket', newLang);
       },
       login() {
         const provider = new firebase.auth.GithubAuthProvider();

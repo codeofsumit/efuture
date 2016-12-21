@@ -5,7 +5,7 @@
         <div class="content">
           <label v-if="carId" class="label">Edit Existing Car</label>
           <p v-if="carId" class="control has-addons">
-            <input disabled class="input" type="text" placeholder="Tesla" v-model="carId">
+            <input disabled class="input is-expanded" type="text" placeholder="Tesla" v-model="carId">
             <button class="button is-primary" v-on:click="createNewCar()">Create New Car Instead</button>
           </p>
           <label class="label">Car Brand</label>

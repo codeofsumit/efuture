@@ -18,7 +18,10 @@
           </div>
           <ul v-if="specsAvailable">
             <li v-if="car.baseSpecs.price">
-              <span>Preis ab {{car.baseSpecs.price}} {{translations.currency}}</span>
+              <span>Preis ab</span>
+              <span v-if="translations.currency === '$'">{{translations.currency}}</span>
+              <span>{{car.baseSpecs.price}}</span>
+              <span v-if="translations.currency === '€'">{{translations.currency}}</span>
             </li>
             <li v-if="car.baseSpecs.range">
               <span>Reichweite: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
@@ -51,11 +54,12 @@
       carId: {},
     },
     data() {
-      return {
-        translations: this.$store.state.translations,
-      };
+      return {};
     },
     computed: {
+      translations() {
+        return this.$store.state.translations;
+      },
       specsAvailable() {
         const specs = _.values(this.car.baseSpecs);
         _.remove(specs, _.isNil);
