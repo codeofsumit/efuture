@@ -38,7 +38,7 @@ const store = new Vuex.Store({
   state: {
     cars: [],
     translations: {},
-    market: 'us_us',
+    market: navigator.language === 'de' ? 'de_de' : 'us_us',
     allowed: false,
     editCar: {
       id: undefined,
@@ -113,6 +113,8 @@ const store = new Vuex.Store({
     },
   },
 });
+
+console.log();
 
 const getMarketData = () => {
   // TODO: find a better place for this
