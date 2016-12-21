@@ -18,7 +18,10 @@
           </div>
           <ul v-if="specsAvailable">
             <li v-if="car.baseSpecs.price">
-              <span>Preis ab {{car.baseSpecs.price}} {{translations.currency}}</span>
+              <span>Preis ab</span>
+              <span v-if="translations.currency === '$'">{{translations.currency}}</span>
+              <span>{{car.baseSpecs.price}}</span>
+              <span v-if="translations.currency === '€'">{{translations.currency}}</span>
             </li>
             <li v-if="car.baseSpecs.range">
               <span>Reichweite: {{car.baseSpecs.range}} {{translations.rangeUnit}}</span>
